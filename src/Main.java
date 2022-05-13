@@ -25,7 +25,7 @@ public class Main {
 
     public static int[] random(int length) {
         int[] randomArray = new int[length];
-        for (iment i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             randomArray[i] = random.nextInt(100);
         }
         return randomArray;

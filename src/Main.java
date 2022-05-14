@@ -9,18 +9,18 @@ public class Main {
     public static void main(String[] args) {
         long first;
         long second;
-        int[] intArray = random(100);
+        int[] intArray = random(10000);
         System.out.println(Arrays.toString(intArray));
-        first = System.currentTimeMillis();
-        System.out.println(oneTread(intArray));
-        second = System.currentTimeMillis();
-        final long oneTreadTime = second - first;
-        System.out.println(oneTreadTime + " миллисекунд выполнено одним потоком");
         first = System.currentTimeMillis();
         System.out.println(multithreaded(intArray));
         second = System.currentTimeMillis();
         final long multiTreadTime = second - first;
         System.out.println(multiTreadTime + " миллисекунд выполнено многопоточным программированием");
+        first = System.currentTimeMillis();
+        System.out.println(oneTread(intArray));
+        second = System.currentTimeMillis();
+        final long oneTreadTime = second - first;
+        System.out.println(oneTreadTime + " миллисекунд выполнено одним потоком");
     }
 
     public static int[] random(int length) {
@@ -32,11 +32,8 @@ public class Main {
     }
 
     public static int oneTread(int[] numbers) {
-        int i = 0;
-        for (int number : numbers) {
-            i += number;
-        }
-        return i;
+        return Arrays.stream(numbers)
+                .sum();
     }
 
 

@@ -27,6 +27,10 @@ public class Task extends RecursiveTask<Integer> {
             }
             case 2 -> {
                 return array[start] + array[start + 1];
+            } case 3 -> {
+                return array[start] + array[start + 1] + array[start + 2];
+            } case 4 -> {
+                return array[start] + array[start + 1] + array[start + 2] + array[start + 3];
             } default -> {
                 return forkTask();
             }
